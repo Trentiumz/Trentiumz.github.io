@@ -1,0 +1,19 @@
+canvas{
+  align-self: center;
+}
+
+body{
+  vertical-align: center;
+  text-align: center;
+  background-image: url("./images/background.jpg");
+}
+
+#container{
+  align-self: center;
+  vertical-align: center;
+}
+
+#title{
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
