@@ -1,0 +1,37 @@
+body{
+  text-align: center;
+  background-image: url("./assets/background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+h1{
+  font-size: 500%;
+}
+
+#container{
+  margin: 4%;
+}
+
+.gameLink{
+  background-color: white;
+  padding: 2%;
+  border-radius: 35%;
+  border-color: lightblue;
+  border-width: 10px;
+  margin-top: 200px;
+  border-style: solid;
+
+  font-size: 200%;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition-duration: 0.5s;
+}
+
+.gameLink:hover{
+  background-color: orange;
+  border-color: red;
+  transition-duration: 0.5s;
+}
