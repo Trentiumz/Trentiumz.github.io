@@ -9,12 +9,13 @@ var numbers = [
 const numSquares = 4;
 
 // Using extrapolation to deal with the current client
-var currentClient = new gameClient();
+var currentClient;
 
 
 // MAIN FUNCTION --------------------------------------------------------------------------------------------------
 window.onload = function() {
   initialize();
+  currentClient = new gameClient();
 
   document.addEventListener("keydown", keyDown)
 
