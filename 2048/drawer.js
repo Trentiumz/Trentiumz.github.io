@@ -71,14 +71,14 @@ function initialize() {
 }
 
 // Rendering the array
-function render_grid(numbers){
+function render_grid(numbers) {
   // Draw the background
   drawBackground();
 
   // Render the cell of each element in our numbers
-  for(let y = 0; y < numbers.length; ++y){
-    for(let x = 0; x < numbers.length; ++x){
-      if(numbers[y][x] == 0){
+  for (let y = 0; y < numbers.length; ++y) {
+    for (let x = 0; x < numbers.length; ++x) {
+      if (numbers[y][x] == 0) {
         continue;
       }
       drawCell(x, y, 1 << numbers[y][x]);
@@ -88,11 +88,11 @@ function render_grid(numbers){
 
 // movingPieces = [[number, start Cell Row, start Cell Column, end Cell Row, end Coll Column]]
 // createdPieces = [[number, cell row, cell column]]
-function encode(movingPieces, createdPieces){
+function encode(movingPieces, createdPieces) {
   // The encoded version of movingPieces
   // [[number, start percentage x, start percentage y, end perc x, end perc y]]
   movingParts = []
-  for(let piece of movingPieces){
+  for (let piece of movingPieces) {
     let [sx, sy] = getPCoordFromCell(piece[2], piece[1], 1)
     let [ex, ey] = getPCoordFromCell(piece[4], piece[3], 1)
     movingParts.push([piece[0], sx, sy, ex, ey])
@@ -101,7 +101,7 @@ function encode(movingPieces, createdPieces){
   // The encoded version of createdPieces
   // [[number, grid x, grid y]]
   createdParts = []
-  for(let piece of createdPieces){
+  for (let piece of createdPieces) {
     createdParts.push([piece[0], piece[2], piece[1]]);
   }
 
@@ -109,20 +109,21 @@ function encode(movingPieces, createdPieces){
   return [movingParts, createdParts]
 }
 
-function render_animation(movingParts, creationParts){
+function render_animation(movingParts, creationParts) {
   // We start by rendering the movement
   handlingAnimation = true;
   render_moving(movingParts, 0, creationParts)
 }
 
+
 // HIGHER LEVEL RENDERING FUNCTIONS --------------------------------------
 
 // parts = [[number, startx, starty, endx, endy]]
-function render_moving(parts, currentFrame, creation_parts){
+function render_moving(parts, currentFrame, creation_parts) {
   // Once the animation completes, we go on to animate the creation of tiles
-  if(currentFrame > animationMovingFrames){
+  if (currentFrame > animationMovingFrames) {
     completed = []
-    for(let part of parts){
+    for (let part of parts) {
       completed.push([part[0], part[3], part[4]])
     }
     setTimeout(render_creation, animationDelta, creation_parts, completed, 0)
@@ -133,7 +134,7 @@ function render_moving(parts, currentFrame, creation_parts){
   drawBackground()
 
   // For each part, we draw its position based on its final coords, start coords and the current frame in the animation
-  for(let part of parts){
+  for (let part of parts) {
     ratio = currentFrame / animationMovingFrames
     let [number, startx, starty, endx, endy] = part
     drawImageP(ratio * (endx - startx) + startx, ratio * (endy - starty) + starty, numberWidth, numberWidth, 1 << number)
@@ -144,9 +145,9 @@ function render_moving(parts, currentFrame, creation_parts){
 }
 
 // parts = [[number, cell x, cell y]]; fullParts = [[number, perc x, perc y]]
-function render_creation(parts, fullParts, currentFrame){
+function render_creation(parts, fullParts, currentFrame) {
   // Once we're done with the creation animation
-  if(currentFrame > animationCreationFrames){
+  if (currentFrame > animationCreationFrames) {
     handlingAnimation = false;
     return
   }
@@ -155,13 +156,13 @@ function render_creation(parts, fullParts, currentFrame){
   drawBackground()
 
   // When drawing created tiles, we still need to keep the tiles already there
-  for(let part of fullParts){
+  for (let part of fullParts) {
     [number, x, y] = part
     drawImageP(x, y, numberWidth, numberWidth, 1 << number)
   }
 
   // For every created tile, we draw the tile where it's supposed to be, but smaller in terms of the current frame
-  for(let part of parts){
+  for (let part of parts) {
     let ratio = currentFrame / animationCreationFrames;
     let [number, x, y] = part;
     drawCellScaled(x, y, 1 << number, ratio);
@@ -170,6 +171,7 @@ function render_creation(parts, fullParts, currentFrame){
   // Wait a bit, and go to the next frame
   setTimeout(render_creation, animationDelta, parts, fullParts, ++currentFrame)
 }
+
 
 // DRAWING FUNCTIONS --------------------------------------------
 
@@ -215,11 +217,11 @@ function fillRectP(x, y, width, height, color) {
   fillRect(x * ratio, y * ratio, width * ratio, height * ratio, color)
 }
 
-function drawCell(x, y, value){
+function drawCell(x, y, value) {
   drawCellScaled(x, y, value, 1)
 }
 
-function drawCellScaled(x, y, value, scale){
+function drawCellScaled(x, y, value, scale) {
   // We get the Percentage coordinate given the current "cell coordinates"
   [x, y] = getPCoordFromCell(x, y, scale)
 
@@ -227,7 +229,7 @@ function drawCellScaled(x, y, value, scale){
   drawImageP(x, y, numberWidth * scale, numberWidth * scale, value)
 }
 
-function getPCoordFromCell(x, y, scale){
+function getPCoordFromCell(x, y, scale) {
   // spaghetti code for getting the coordinate out of 100 when given the cell coordinates
   x = x * cellInterval + lineWidthP / 2 + cellMarginFromLineCenter + (numberWidth - numberWidth * scale) / 2
   y = y * cellInterval + lineWidthP / 2 + cellMarginFromLineCenter + (numberWidth - numberWidth * scale) / 2
@@ -235,14 +237,14 @@ function getPCoordFromCell(x, y, scale){
 }
 
 // Draws the background
-function drawBackground(){
+function drawBackground() {
   // Draw the background of the game; an empty grid
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   drawImageP(0, 0, 100, 100, "border")
   drawLines();
 }
 
-function fillTextP(text, size, centerX, centerY, color, opacity = 1){
+function fillTextP(text, size, centerX, centerY, color, opacity = 1) {
   ratio = length * 0.01
 
   // Set the font that we will be using based on params
