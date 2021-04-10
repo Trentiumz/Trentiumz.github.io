@@ -1,0 +1,171 @@
+body {
+  background-image: url("./images/ground.jpg");
+  background-size: auto;
+  text-align: center;
+
+  margin: auto;
+}
+
+#heading{
+  font-size: 500%;
+  color: lightblue;
+}
+
+.stepButtons{
+  margin: 2%;
+  background-color: lightgrey;
+  padding: 1%;
+  border-radius: 100px;
+  border-width: 5px;
+  border-color: blue;
+  transition-duration: 0.5s;
+}
+
+.stepButtons:hover{
+  background-color: orange;
+  border-color: red;
+  transition-duration: 0.5s;
+}
+
+.optionButtons{
+  margin: 2%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 100px;
+  border-width: 7px;
+  border-color: purple;
+  font-size: 200%;
+  font-family: arial;
+  background-color: lightblue;
+  font-weight: bolder;
+  transition-duration: 0.5s;
+}
+
+.optionButtons:hover{
+  background-color: pink;
+  transition-duration: 0.5s;
+}
+
+#startingFormat{
+  vertical-align: middle;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.coveredCell{
+  width: 40px;
+  height: 40px;
+  background-color: #91b4bf;
+  text-align: center;
+  font-size: 120%;
+  font-family: Tahoma;
+  border: thin solid black;
+  margin: 0px;
+  transition-duration: 0.2s;
+  table-layout: fixed;
+}
+
+.coveredCell:hover{
+  background-color: red;
+  transition-duration: 0.2s;
+}
+
+.emptyCell{
+  width: 40px;
+  height: 40px;
+  background-color: #add8e6;
+  text-align: center;
+  font-size: 120%;
+  font-family: Tahoma;
+  border: thin solid black;
+  margin: 0px;
+  transition-duration: 0.2s;
+  table-layout: fixed;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emptyCell:hover{
+  cursor:default;
+}
+
+#gameTable{
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+}
+
+.resultContainer{
+  position: fixed;
+  background-color: rgb(144, 238, 144, 0.5);
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+  width: 400px;
+  height: 300px;
+  z-index: 10;
+  margin: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
+  border-radius: 35%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: brown;
+
+  vertical-align: center;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  transition-duration: 0.5s;
+}
+
+.resultContainer:hover{
+  background-color: rgb(80, 95.2, 80, 0.8);
+  border-color: red;
+  transition-duration: 0.3s;
+
+  color: white;
+}
+
+.resultHeader{
+  font-size: 500%;
+}
+
+.resultDescription{
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.infoIcon{
+  width: 60px;
+  height: 60px;
+
+  resize: none;
+}
+
+.infoTable th{
+  color: white;
+  font-size: 300%;
+}
+
+.infoTable{
+  border-spacing: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
