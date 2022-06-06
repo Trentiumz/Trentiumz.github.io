@@ -23,16 +23,29 @@
   </div>
   <div class="container pt-5">
     <p class="h1">Question</p>
+    <p>A device is traveling in the position x direction along the line y=4. At some point in time, we take measurements on this device. As it turns out, this device is 5 units away from (5, 0) and 17 units away from (23, 12). What are the coordinates of the device?</p>
   </div>
 
-  <div class="container pt-5">
-    <form>
+  <div class="container pt-3">
+    <div class="container">
       <div class="mb-3">
         <label class="form-label">Enter your answer here:</label>
-        <input type="text" class="form-control" placeholder="Your Answer"></input>
+        <input id="answer" onclick="console.log('hi')" type="text" class="form-control" placeholder="E.g '(4,6)'"></input>
+        <span id="result"></span>
+        <br>
+        <input onclick="test()" type="submit" class="btn btn-primary" />
       </div>
     </form>
   </div>
+
+  <script>
+    function test(){
+      if($("#answer").val() === "(8,4)"){
+        $("#result").html("<br>Correct! The next part of the puzzle is <a href='./unit2.html'>here</a><br>")
+      }
+      console.log($("#answer").val());
+    }
+  </script>
 </body>
 
 </html>
