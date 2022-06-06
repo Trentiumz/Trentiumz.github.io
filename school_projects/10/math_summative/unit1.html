@@ -35,13 +35,15 @@
         <br>
         <input onclick="test()" type="submit" class="btn btn-primary" />
       </div>
-    </form>
+    </div>
   </div>
 
   <script>
     function test(){
       if($("#answer").val() === "(8,4)"){
         $("#result").html("<br>Correct! The next part of the puzzle is <a href='./unit2.html'>here</a><br>")
+      } else {
+        $("#result").html("Unfortunately, that is not correct :(")
       }
       console.log($("#answer").val());
     }

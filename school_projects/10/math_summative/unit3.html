@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+  <title>MPM2DP MathCache - Topic 4 Question 1</title>
+  <script type="text/javascript"
+    src="https://www.maths.nottingham.ac.uk/plp/pmadw/LaTeXMathML.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid p-5 text-center bg-primary rounded text-white">
+    <p class="display-1">MathCaching</p>
+    <p class="h3">Level 4</p>
+  </div>
+  <div class="container pt-3">
+    <p>\(a^{-b}=\frac1{a^b}\) and \(a^0=1\)</p>
+    <p>A curve of best fit is the curve that best fits the data, and is sometimes nonlinear. A quadratic relation is a relation of the form ax2+bx+c, and its graph is a parabola (a U-shaped curve). Its vertex is the maximum/minimum, and its axis of symmetry passes through it. </p>
+    <p>By taking finite differences, one can often see if the data is mostly linear, quadratic, or neither. If first differences are equal, it is linear, if second differences are equal, it is quadratic. </p>
+    <p>y=a(x-h)2+k shifts the graph right by h units, stretches the graph vertically by a factor of a and shifts the graph up by k units. </p>
+    <p>A graph of the form y=a(x-r)(x-s) has roots at x=r and x=s, and is called the zeros form. A graph of the form y=a(x-h)2+k is called vertex form and has a vertex at (h, k)</p>
+  </div>
+  <div class="container pt-5">
+    <p class="h1">Question</p>
+    <p>A country can either make bread or invest in toppings. For every additional loaf of bread
+      that it makes, it must make 2 less toppings. Assume that this country has a constant opportunity
+      cost (i.e, the number of toppings that it must give up for each loaf of bread is constant). The
+      country currently makes 20 loaves of bread and 36 toppings, with each loaf of bread selling for 2 dollars.
+      For each additional topping it makes, each loaf of bread will be worth 50 cents more. How many loaves
+      bread should the country sell to maximize profit?</p>
+  </div>
+
+  <div class="container pt-3">
+    <div class="container">
+      <div class="mb-3">
+        <label class="form-label">Enter your answer here:</label>
+        <input id="answer" onclick="console.log('hi')" type="text" class="form-control" placeholder="E.g '40'"></input>
+        <span id="result"></span>
+        <br>
+        <input onclick="test()" type="submit" class="btn btn-primary" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function test(){
+      // if we make b loaves
+      // we have b-20 increases
+      // toppings decrease by 2(b-20)=2b-40
+      // bread cost decreases by 1/2 (2b-40)=b-20
+      // bread cost is 2-(b-20)=22-b
+      // revenue is b(22-b) and the optimal # of loaves is 11
+
+      if($("#answer").val() === "11"){
+        $("#result").html("<br>Correct! The next part of the puzzle is <a href='./unit4.html'>here</a><br>")
+      } else {
+        $("#result").html("<br>Unfortunately, that is not correct :(<br>")
+      }
+      console.log($("#answer").val());
+    }
+  </script>
+</body>
+
+</html>
