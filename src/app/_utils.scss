@@ -1,0 +1,11 @@
+@mixin column-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin row-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+$lightgreen: #9DFFC1;

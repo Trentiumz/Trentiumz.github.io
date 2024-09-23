@@ -1,0 +1,117 @@
+@use "../utils" as u;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900');
+
+@mixin heading-font {
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.5em;
+  font-variation-settings:
+    "wdth" 100;
+}
+@mixin description-font {
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.5em;
+  font-variation-settings:
+    "wdth" 80;
+  color: grey;
+}
+@mixin achievement-title-font{
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 2em;
+  font-style: normal;
+}
+
+:host {
+    @include u.column-flex;
+    justify-content: stretch;
+    #intro{
+        margin-top: 3em;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        @media (min-width: 900px) {
+            flex-wrap: nowrap;
+        }
+        @media (max-width: 900px) {
+            flex-wrap: wrap;
+        }
+
+        #intro-text {
+            flex: 2;
+            flex-basis: 500px;
+            @include u.column-flex;
+            align-self: center;
+            @media (min-width: 900px) {
+                margin-left: 4em;
+            }
+            @media (max-width: 900px) {
+                margin-left: 20px;
+            }
+            #heading {
+                align-self: center;
+                @include heading-font;
+                @include u.column-flex;
+            }
+            #description {
+                margin-top: 20px;
+                @include description-font;
+                @include u.column-flex;
+                gap: 20px;
+            }
+        }
+        #intro-pic {
+            @include u.column-flex;
+            flex: 1;
+            align-items: center;
+            img {
+                width: 300px;
+                border-radius: 999px;
+            }
+            margin-left: 2em;
+            margin-right: 20px;
+        }
+    }
+    #achievements {
+        margin-top: 5em;
+        @include u.column-flex;
+        align-items: stretch;
+        margin-left: 20px;
+        .section-header {
+            border-top: 2px solid black;
+            padding-top: 20px;
+        }
+        #achievement-types{ 
+            @include u.column-flex;
+            justify-content: stretch;
+            .achievement-column {
+                margin-top: 20px;
+                flex: 1;
+                flex-basis: 0;
+                @include u.column-flex;
+                align-items: center;
+                .cat-header {
+                    margin-bottom: 20px;
+                    @include achievement-title-font;
+                }
+                .cat-list {
+                    @include u.row-flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}
+
+.section-header {
+    @include heading-font;
+    text-align: center;
+}

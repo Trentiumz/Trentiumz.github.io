@@ -1,0 +1,10 @@
+@use "../utils";
+
+#topbar {
+    @include utils.column-flex;
+    background-image: url("/images/banner.jpg");
+    background-position-y: 40%;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+}

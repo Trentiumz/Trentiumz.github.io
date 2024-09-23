@@ -1,0 +1,54 @@
+@use "../utils" as u;
+@mixin sidebar-font{
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: grey;
+}
+
+#sidebar-content{
+    @include u.column-flex;
+    align-items: stretch;
+    .sidebar-element {
+        @include u.row-flex;
+        justify-content: stretch;
+        margin-bottom: 20px;
+        align-items: center;
+        @include sidebar-font;
+        .line{
+            flex-grow: 1;
+            height: 50%;
+            border-bottom: 2px solid grey;
+            margin-left: 10px;
+        }
+    }
+}
+
+#sidebar-content {
+    margin-top: 3em;
+    @media (max-width: 500px){ 
+        margin-left: 0;
+        margin-right: 0;
+    }
+    @media (max-width: 900px){ 
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    @media (min-width: 900px){
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+:host {
+    @media (max-width: 500px) {
+        display: none;
+    }
+    @media (min-width: 500px) and (max-width: 900px) {
+        width: 200px;
+    }
+    @media (min-width: 900px) {
+        width: 400px;
+    }
+    background-color: u.$lightgreen;
+}
