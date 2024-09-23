@@ -1,5 +1,4 @@
 @use "../utils" as u;
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900');
 
 @mixin heading-font {
   font-family: "Cabin", sans-serif;
@@ -21,7 +20,7 @@
   color: grey;
 }
 @mixin achievement-title-font{
-  font-family: "Rubik", sans-serif;
+  font-family: system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 2em;
