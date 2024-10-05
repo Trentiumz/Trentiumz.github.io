@@ -60,7 +60,6 @@
                 @include u.column-flex;
             }
             #description {
-                margin-top: 20px;
                 @include description-font;
                 @include u.column-flex;
                 gap: 20px;
@@ -95,13 +94,15 @@
                 flex: 1;
                 flex-basis: 0;
                 @include u.column-flex;
-                align-items: center;
                 .cat-header {
+                    align-self: center;
                     margin-bottom: 20px;
                     @include achievement-title-font;
                 }
                 .cat-list {
+                    align-self: center;
                     @include u.row-flex;
+                    justify-content: center;
                     flex-wrap: wrap;
                     gap: 20px;
                 }
