@@ -3,7 +3,14 @@
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: grey;
+  color: #555555;
+}
+@mixin title-font {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  font-style: normal;
+  color: black;
 }
 
 #sidebar-content{
@@ -11,6 +18,7 @@
     align-items: stretch;
     .sidebar-element {
         @include u.row-flex;
+        text-decoration: none;
         justify-content: stretch;
         margin-bottom: 20px;
         align-items: center;
@@ -25,7 +33,7 @@
 }
 
 #sidebar-content {
-    margin-top: 3em;
+    margin-top: 1em;
     @media (max-width: 500px){ 
         margin-left: 0;
         margin-right: 0;
@@ -45,10 +53,30 @@
         display: none;
     }
     @media (min-width: 500px) and (max-width: 900px) {
-        width: 200px;
+        width: 150px;
     }
     @media (min-width: 900px) {
-        width: 400px;
+        width: 200px;
     }
     background-color: u.$lightgreen;
+    @include u.column-flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    #selfie{
+        @include u.row-flex;
+        align-self: center;
+        margin: 10px 30px;
+        img {
+            border-radius: 20px;
+            border: 2px solid green;
+            object-fit: cover;
+            max-width: 100%;
+        }
+    }
+    #sidebar {
+        align-self: stretch;
+        text-align: center;
+        margin-top: 20px;
+        @include title-font;
+    }
 }
