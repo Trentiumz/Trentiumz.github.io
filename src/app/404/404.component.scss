@@ -77,6 +77,14 @@
         animation-timing-function: step-end;
         background-size: width;
     }
+    #left-404 {
+        @include u.row-flex;
+        justify-content: center;
+        img {
+            max-width: 100%;
+            position: relative;
+        }
+    }
 }
 :host {
     @include u.row-flex;
