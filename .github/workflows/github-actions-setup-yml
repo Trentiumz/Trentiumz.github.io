@@ -5,8 +5,6 @@ on: [push]
 jobs:
   Setup-Angular:
     runs-on: ubuntu-latest
-    environment: production
-    concurrency: production
     steps:
       - name: Checkout
         run: echo "checking out ${{ github.repository }}"
