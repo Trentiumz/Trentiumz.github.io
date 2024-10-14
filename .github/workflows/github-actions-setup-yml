@@ -1,0 +1,22 @@
+name: GitHub Actions Setup Deploy Angular!
+run-name: ${{ github.actor }} is setting up Angular
+on: [push]
+
+jobs:
+  Setup-Angular:
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency: production
+    steps:
+      - name: Checkout
+        run: echo "checking out ${{ github.repository }}"
+        uses: actions/checkout@v4
+      - name: use Node.js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - run: ng build
+      - run: |
+          ls ${{ github.workspace }}
+      - run: echo "done??"
