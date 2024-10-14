@@ -25,7 +25,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: us-east-2
-      - name: Move to browser
+      - name: Upload to AWS
         run: |
           cd "./dist/trentiumz/browser"
-          aws s3 cp * s3://trentium.ca --recursive
+          aws s3 cp . s3://trentium.ca --recursive
