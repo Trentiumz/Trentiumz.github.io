@@ -9,6 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run: echo "checking out ${{ github.repository }}"
+      - run: cd ${{ github.workspace }}
       - name: use Node.js 
         uses: actions/setup-node@v4
         with:
