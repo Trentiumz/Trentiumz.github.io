@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-404',
@@ -9,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class Component404 {
 
+  ngOnInit() {
+  }
+  
 }

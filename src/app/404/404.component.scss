@@ -37,6 +37,7 @@
     div {
         flex-grow: 1;
         flex-shrink: 1;
+        flex-basis: 0;
     }
     #center-404 {
         @include u.column-flex;
@@ -66,6 +67,16 @@
             }
         }
         text-align: center;
+    }
+    #right-404 {
+        @include u.column-flex;
+        align-self: stretch;
+        overflow: hidden;
+        background-image: url("/images/glitchy.png");
+        animation: glitch-move 2s infinite;
+        animation-timing-function: step-end;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 :host {
