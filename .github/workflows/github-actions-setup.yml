@@ -1,6 +1,9 @@
-name: GitHub Actions Setup Deploy Angular!
-run-name: ${{ github.actor }} is setting up Angular
-on: [push]
+name: GitHub Actions Setup Deploy
+run-name: ${{ github.actor }} is deploying a build to AWS
+on: 
+  push:
+    branches:
+      - deploy
 
 jobs:
   Setup-Angular:
