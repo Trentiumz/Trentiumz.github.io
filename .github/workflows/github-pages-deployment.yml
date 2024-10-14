@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout ${{ github.repository }}
         uses: actions/checkout@v4
-      - run: git checkout github-static
-      - run: git pull
       - name: use Node.js 
         uses: actions/setup-node@v4
         with:
@@ -31,6 +29,6 @@ jobs:
         run: |
           git add .
           git commit -m "Update Site for ${{ github.run_id }}"
-          git push origin HEAD:github-static  
+          git push origin -f HEAD:github-static  
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
