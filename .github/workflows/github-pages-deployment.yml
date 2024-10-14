@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  Setup-Angular:
+  Deploy-To-Pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout ${{ github.repository }}
@@ -21,6 +21,10 @@ jobs:
           npm install -g @angular/cli@18
       - name: Build
         run: ng build --output-path "docs"
+      - name: Authenticate
+        run: |
+          git config --global user.email "danielyeqt@gmail.com"
+          git config --global user.name "Trentiumz"
       - name: Commit and push changes
         run: |
           git add .
