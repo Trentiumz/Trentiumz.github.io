@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   workflow_run:
-    workflows: ["Deploy GitHub Actions"]
+    workflows: ["GitHub Actions Deploy to Pages"]
     types:
       - completed
 
