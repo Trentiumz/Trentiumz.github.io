@@ -20,14 +20,11 @@ jobs:
           npm install
           npm install -g @angular/cli@18
       - name: Build
-        run: ng build 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-          aws-region: us-east-2
-      - name: Upload to AWS
+        run: ng build --output-path "docs"
+      - name: Commit and push changes
         run: |
-          cd "./dist/trentiumz/browser"
-          aws s3 cp . s3://trentium.ca --recursive
+          git add .
+          git commit -m "Update Site for ${{ github.run_id }}"
+          git push origin HEAD:github-static  
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
