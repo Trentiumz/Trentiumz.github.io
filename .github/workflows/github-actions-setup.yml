@@ -15,7 +15,8 @@ jobs:
         with:
           node-version: '20.x'
       - run: npm install
-      - run: ng build
+      - run: npm install -g @angular/cli@18
+      - run: npm build
       - run: |
           ls ${{ github.workspace }}
       - run: echo "done??"
