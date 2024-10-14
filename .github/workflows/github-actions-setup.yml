@@ -5,6 +5,7 @@ on: [push]
 jobs:
   Setup-Angular:
     runs-on: ubuntu-latest
+    environment: deployment
     steps:
       - name: Checkout ${{ github.repository }}
         uses: actions/checkout@v4
@@ -18,7 +19,13 @@ jobs:
           npm install -g @angular/cli@18
       - name: Build
         run: npm run build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: us-east-2
       - name: Move to browser
         run: |
           cd "./dist/trentiumz/browser"
-          ls
+          aws s3 cp * s3://trentium.ca --recursive
