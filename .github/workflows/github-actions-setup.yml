@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout ${{ github.repository }}
         uses: actions/checkout@v4
-      - name: Move to workspace
-        run: cd ${{ github.workspace }}
       - name: use Node.js 
         uses: actions/setup-node@v4
         with:
@@ -21,5 +19,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Move to browser
-        run: cd "./dist/trentiumz/browser"
-      - run: ls
+        run: |
+          cd "./dist/trentiumz/browser"
+          ls
