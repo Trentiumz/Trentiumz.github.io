@@ -67,22 +67,37 @@
             }
         }
         text-align: center;
+        padding: 0 25px;
     }
-    #right-404 {
-        @include u.column-flex;
-        align-self: stretch;
-        overflow: hidden;
-        background-image: url("/images/glitchy.png");
-        animation: glitch-move 2s infinite;
-        animation-timing-function: step-end;
-        background-size: width;
+    @media (max-width: 800px){
+        #left-404 {
+            display: none;
+        }
     }
-    #left-404 {
-        @include u.row-flex;
-        justify-content: center;
-        img {
-            max-width: 100%;
-            position: relative;
+    @media (min-width: 800px) {
+        #left-404 {
+            @include u.row-flex;
+            justify-content: center;
+            img {
+                max-width: 100%;
+                position: relative;
+            }
+        }
+    }
+    @media (min-width: 400px) {
+        #right-404 {
+            @include u.column-flex;
+            align-self: stretch;
+            overflow: hidden;
+            background-image: url("/images/glitchy.png");
+            animation: glitch-move 2s infinite;
+            animation-timing-function: step-end;
+            background-size: width;
+        }
+    }
+    @media (max-width: 400px) {
+        #right-404 {
+            display: none;
         }
     }
 }
