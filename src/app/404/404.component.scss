@@ -1,0 +1,75 @@
+@use "../utils" as u;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
+
+@mixin nunito-header {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin nunito-link {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.column-flex {
+    @include u.column-flex;
+}
+.column-center-flex {
+    @include u.column-flex;
+    align-items: center;
+}
+.row-flex {
+    @include u.row-flex;
+}
+.row-center-flex {
+    @include u.row-flex;
+    align-items: center;
+}
+
+#split-container {
+    background-color: lightgreen;
+    @include u.row-flex;
+    flex-grow: 1;
+    justify-items: stretch;
+    div {
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    #center-404 {
+        @include u.column-flex;
+        h2 {
+            @include nunito-header;
+            font-size: 3em;
+            margin: 0 0;
+        }
+        a {
+            margin-top: 20px;
+            @include nunito-link;
+            font-size: 1.5em;
+            text-decoration: none;
+            color: black;
+            animation: pulse-shadow 1.5s infinite;
+            
+            @keyframes pulse-shadow {
+                0% {
+                    text-shadow: white 2px 2px 2px;
+                }
+                50% {
+                    text-shadow: none;
+                }
+                100% {
+                    text-shadow: white 2px 2px 2px;
+                }
+            }
+        }
+        text-align: center;
+    }
+}
+:host {
+    @include u.row-flex;
+    justify-items: stretch;
+    flex-grow: 1;
+}
