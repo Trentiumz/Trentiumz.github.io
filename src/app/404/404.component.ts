@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import Typewriter from 'typewriter-effect/dist/core';
 
 @Component({
   selector: 'app-404',
@@ -13,7 +14,14 @@ export class Component404 {
   blobleft: string = "0";
   blobtop: string = "0";
   intervalId: any;
+  mainPageDisplay: string = "none"
+
   platformId: Object;
+
+  introDisplay: string = "flex";
+
+  typeTransition: string = "none";
+  mainTransition: string = "none";
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.platformId = platformId;
@@ -21,11 +29,53 @@ export class Component404 {
 
   ngOnInit() {
     if(isPlatformBrowser(this.platformId)) {
-      this.runAnimation();
+      this.typeWriterAnimation(this.runMainAnimation)
     }
   }
 
-  runAnimation() {
+  typeWriterAnimation(next: () => void) {
+    const typeStrings = (toType: {id: string, value: string}[], whenDone: () => void) => {
+      let cur: () => void = whenDone;
+      for(const i of toType.reverse()) {
+        let curFunc = cur;
+        cur = () => {
+          new Typewriter(`#${i.id}`, { loop: false, delay: 50}).typeString(i.value).pauseFor(400)
+            .callFunction(curFunc).start();
+        }
+      }
+      cur();
+    }
+    setTimeout(() => {
+      typeStrings([
+        {id: "first", value: "Where's the site?"},
+        {id: "second", value: "Here?"},
+        {id: "third", value: "What about here?"},
+        {id: "fourth", value: "Or here?"},
+        {id: "fifth", value: "Where's the site??????"}
+      ], () => {
+        setTimeout(() => {
+          let percent = 0
+          const intervalId = setInterval(() => {
+            if(percent > 100) {
+              console.log('done')
+              this.introDisplay = "none";
+              this.mainTransition = "none";
+              this.typeTransition = "none";
+              this.runMainAnimation();
+              clearInterval(intervalId)
+            } else {
+              this.mainTransition = `radial-gradient(circle at center, black ${percent}%, transparent ${percent + 1}%)`
+              this.typeTransition = `radial-gradient(circle at center, transparent ${percent}%, black ${percent + 1}%)`
+              this.mainPageDisplay = "flex";
+              percent += 7;
+            }
+          }, 20);
+        }, 1000)
+      });
+    }, 1000)
+  }
+
+  runMainAnimation() {
     let curframe = 0;
     const totalFrames = 40;
     let cx = 0, cy = 0;

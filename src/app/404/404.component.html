@@ -1,11 +1,21 @@
-<div class="row-center-flex" id="split-container">
+<div class="row-center-flex" id="split-container" [style.display]="mainPageDisplay" [style.maskImage]="mainTransition">
     <div id="left-404">
         <img src="/images/asadblob.png" [style.left]="blobleft" [style.top]="blobtop"/>
     </div>
     <div id="center-404">
         <h2>404</h2>
         <h2>Page Not Found</h2>
-        <a href="/">Return Home</a>
+        <a href="/" id="main-home">Return Home</a>
     </div>
     <div id="right-404" [style.background-position]="glitchPosition"></div>
+</div>
+<div id="type-container" [style.display]="introDisplay" [style.maskImage]="typeTransition" >
+    <span id="first"></span>
+    <span id="second"></span>
+    <span id="third"></span>
+    <span id="fourth"></span>
+    <div id="container">
+        <span id="fifth"></span>
+        <a href="/" id="type-home">Return Home</a>
+    </div>
 </div>

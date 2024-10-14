@@ -13,6 +13,31 @@
   font-weight: 400;
   font-style: normal;
 }
+@mixin nunito-small {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+@mixin link-font($color) {
+    @include nunito-link;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    animation: pulse-shadow-#{"" + $color} 1.5s infinite;
+    
+    @keyframes pulse-shadow-#{"" + $color} {
+        0% {
+            text-shadow: $color 2px 2px 2px;
+        }
+        50% {
+            text-shadow: none;
+        }
+        100% {
+            text-shadow: $color 2px 2px 2px;
+        }
+    }
+}
 
 .column-flex {
     @include u.column-flex;
@@ -46,25 +71,9 @@
             font-size: 3em;
             margin: 0 0;
         }
-        a {
+        #main-home {
             margin-top: 20px;
-            @include nunito-link;
-            font-size: 1.5em;
-            text-decoration: none;
-            color: black;
-            animation: pulse-shadow 1.5s infinite;
-            
-            @keyframes pulse-shadow {
-                0% {
-                    text-shadow: white 2px 2px 2px;
-                }
-                50% {
-                    text-shadow: none;
-                }
-                100% {
-                    text-shadow: white 2px 2px 2px;
-                }
-            }
+            @include link-font(white);
         }
         text-align: center;
         padding: 0 25px;
@@ -105,4 +114,60 @@
     @include u.row-flex;
     justify-items: stretch;
     flex-grow: 1;
+}
+
+#type-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    @include u.row-flex;
+    justify-content: center;
+    align-items: center;
+    #first {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 20px;
+        margin-top: 20px;
+        @include nunito-small;
+        font-size: 1.5em;
+    }
+    #second {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        transform: rotate(-45deg);
+        @include nunito-small;
+        font-size: 1em;
+    }
+    #third {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-left: 20px;
+        margin-top: 60px;
+        transform: rotate(45deg);
+        @include nunito-small;
+        font-size: 1em;
+    }
+    #fourth {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        @include nunito-small;
+        font-size: 1.5em;
+    }
+    #container {
+        @include u.column-flex;
+        align-items: center;
+        #fifth {
+            @include nunito-small;
+            font-size: 1.5em;
+        }
+        #type-home {
+            @include link-font(green);
+        }
+    }
 }
