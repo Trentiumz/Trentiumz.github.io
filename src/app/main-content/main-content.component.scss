@@ -1,6 +1,7 @@
 @use "../utils" as u;
 
 :host {
+    overflow: scroll;
     background-color: u.$lightblue;
     @include u.column-flex;
     justify-content: stretch;
