@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap');
+
+@mixin default-text {
+    font-family: "Inria Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin bold-text {
+    font-family: "Inria Sans", serif;
+    font-weight: 700;
+    font-style: normal;
+}
 @mixin column-flex {
     display: flex;
     flex-direction: column;
@@ -9,3 +21,6 @@
 }
 
 $lightgreen: #9DFFC1;
+$lightblue: #E4FEFF;
+$lightish-blue: #daf5ff;
+$greenhighlight: #78FF7C;

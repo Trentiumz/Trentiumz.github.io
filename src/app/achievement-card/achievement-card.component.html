@@ -1,5 +1,20 @@
-<span id="title">{{title}}</span>
-<span id="description">{{description}}</span>
-@if(imageUrl != "") {
-    <img [src]="imageUrl" />
+@if(alignment == "left") {
+    @if(imageUrl != "") {
+        <img [src]="imageUrl" />
+    }
+    <div id="black-line"> </div>
+    <div id="text-container" [style.text-align]="alignment">
+        <span id="title">{{title}}</span>
+        <span id="description">{{description}}</span>
+    </div>
+}
+@else {
+    <div id="text-container" [style.text-align]="alignment">
+        <span id="title">{{title}}</span>
+        <span id="description">{{description}}</span>
+    </div>
+    <div id="black-line"> </div>
+    @if(imageUrl != "") {
+        <img [src]="imageUrl" />
+    }
 }

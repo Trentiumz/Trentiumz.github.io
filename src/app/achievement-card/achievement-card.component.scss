@@ -1,33 +1,43 @@
 @use "../utils" as u;
-@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
-@mixin title-font {
-  font-family: "Sofadi One", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2em;
-}
-
 
 :host {
-    flex-grow: 1;
-    display: flex;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 20px;
     @include u.column-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    @include u.default-text;
     align-items: center;
-    max-width: 350px;
-    #title {
-        @include title-font;
-        text-align: center;
+    #text-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        #title {
+            font-size: 2.5em;
+        }
+        #description {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
     }
-    #description {
-        margin-top: 10px;
+    #black-line {
+        width: 4px;
+        align-self: stretch;
+        background-color: black;
+        flex-shrink: 0;
+        border-radius: 100px;
     }
-    img{
-        width: 100%;
-        margin-top: 20px;
-        border-radius: 20px;
-        border: 3px solid green;
+    @media(min-width: 900px) {
+        img{
+            width: 300px;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+    } 
+    @media (max-width: 900px) {
+        img{
+            display: none;
+        }
     }
 }
