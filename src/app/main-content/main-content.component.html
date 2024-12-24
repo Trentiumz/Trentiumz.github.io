@@ -1,65 +1,134 @@
 <div id="intro">
     <div id="intro-text">
-        <div id="heading">
-            <span>Hey There! I'm Daniel Ye</span>
-        </div>
-        <div id="description">
-            <span>I'm a first-year computer science student at the University of Waterloo, with an interest in software development, artificial intelligence, and computer science. </span>
-            <span>While I first learned programming through Java (Wooooo <a href="https://www.oreilly.com/library/view/head-first-java/9781492091646/">Head First Java</a>!), I soon migrated to Javascript, Python for a variety of different needs.</span>
-        </div>
+        <span id="first">Hi! I am</span>
+        <span class="big-text">Daniel Ye</span>
+        <span id="third">A mathematician</span>
     </div>
     <div id="intro-pic">
         <img src="/images/the_me.png" />
     </div>
 </div>
-<div id="achievements">
-    <span class="section-header">Sooooo... What have I done?</span>
-    <div id="achievement-types">
-        <div id="projects" class="achievement-column">
-            <span class="cat-header">Projects</span>
-            <div class="cat-list">
-                <app-achievement-card 
-                    title="Gradient Descrent Simulator" 
-                    description="The foundations behind one of the most powerful machine learning algorithms is just finding the minimum of a function. Turns out, you just need derivatives for that! By representing variables and operations as a directed graph, and with the aid of the chain rule and topological sort, we made a rudimentary yet robust gradient descent algorithm. This was visualized with a simulation made in processing."
-                    imageUrl="/images/gradient-descent.png" />
-                <app-achievement-card 
-                    title="Discord Emoji Bot" 
-                    description="Since Discord servers have a maximum emoji limit, wouldn't it be great to have a bot to add and remove emojis so that we 'bypass' the limit? Well, that's exactly what I tried doing, automatically adding desired emojis and removing the least used ones, then replacing user messages with a webhook to add the emoji back in!"
-                    imageUrl="/images/discord-bot.png" />
-                <app-achievement-card 
-                    title="Gnostic" 
-                    description="Gnostic is a Chrome extension and Notion Plugin that allows you to easily generate questions and answers based on your notes in Notion. Once installed, a button will pop up on your page that allows you to generate a quiz based on the given notes (of course using ChatGPT)!"
-                    imageUrl="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/570/738/datas/medium.png" />
-                <app-achievement-card 
-                    title="PosTrainer" 
-                    description="PosTrainer is a personal coach, detecting reps via a webcam, and providing feedback on posture and other workout best practices. It provides customizable hands-free workouts and scores users based on their quality of workouts."
-                    imageUrl="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/205/318/datas/gallery.jpg" />
-                <app-achievement-card 
-                    title="MediBase" 
-                    description="MediBase is a medication assistant allowing people who have poorer eyesight, who don’t understand English well, or have trouble remembering to take safely take medication."
-                    imageUrl="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/001/905/923/datas/medium.png" />
-                <app-achievement-card 
-                    title="MacLyonsDen" 
-                    description="MacLyonsDen is a centralized website at William Lyon Mackenzie C.I where all students can easily access and share information with their peers, access class schedules, and form a large community. I am immensely privileged to have been a part of this endeavor in its earliest stages, working on the UI and layout. Later on, as its frontend lead, I aided in its migration to a React client."
-                    imageUrl="https://maclyonsden.com/media/featured_image/357fd3bf65b44ef7a333d78bbb4b1845.png" />
+
+<div id="about-me" class="content-section">
+    <div class="section-header">
+        <span class="section-title">About Me</span>
+        <span class="section-description">A first-year computer science student at the University of Waterloo who’s still chugging by</span>
+    </div>
+
+    <div id="about-me-content">
+        <div class="about-section">
+            <div class="about-header">
+                <img src="/images/book-icon.png" alt="Book Icon" class="about-header-icon"> 
+                <div class="about-header-text">
+                    <span class="about-header-title">Academic Interests</span>
+                    <span class="about-header-desc">A few things I'm interested in</span>
+                </div>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>Combinatorics</li>
+                    <li>Abstract Algebra</li>
+                    <li>Algorithms and Data Structures</li>
+                    <li>Probabilistic Graph Theory</li>
+                </ul>
             </div>
         </div>
-        <div id="competitions" class="achievement-column">
-            <span class="cat-header">Competitions</span>
-            <div class="cat-list">
-                <app-achievement-card 
-                    title="Internation Olympiad in Informatics" 
-                    description="The International Olympiad in Informatics (IOI) is the most prestigious secondary school competition in algorithmic design and implementation, and one of the International Science Olympiads for secondary school students. I was a representative for the Canadian Delegation, where I earned an Honorable Mention."
-                    imageUrl="https://cemc.uwaterloo.ca/sites/default/files/styles/cke_media_resize_medium/public/2024-09/ioi2024.jpeg?itok=G1NWridP" />
-                <app-achievement-card 
-                    title="Canadian Math Olympiad" 
-                    description="The Canadian Mathematical Olympiad (CMO) is Canada’s premier national advanced mathematics competition. Competitors require an invitation from the Canadian Mathematical Society in order to participate. In this competition, I scored a 13/35. "
-                    imageUrl="/images/DanielYe_CMOCertificate.jpg" />
-                <app-achievement-card 
-                    title="Cyberpatriot" 
-                    description="CyberPatriot is a National Youth Cyber Defense Competition, Canada and America's largest cyber defense competition that puts high school and middle school students in charge of securing virtual networks. In a team of 6, we competed at the regional, earning a Platinum Tier Award; and national (Cybertitan) level."
-                    imageUrl="https://etowahga958.weebly.com/uploads/1/2/4/6/124669310/cyber_orig.jpg" />
+
+        <div class="about-section">
+            <div class="about-header">
+                <img src="/images/rocket-icon.png" alt="Rocket Icon" class="about-header-icon"> 
+                <div class="about-header-text">
+                    <span class="about-header-title">Hobbies/Interests</span>
+                    <span class="about-header-desc">What I do in my spare time</span>
+                </div>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>Playing Piano</li>
+                    <li>Yoyo-ing</li>
+                    <li>Badminton</li>
+                    <li>Competitive Programming</li>
+                    <li>Speedcubing</li>
+                    <li>Watching Formula 1</li>
+                </ul>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="projects" class="content-section">
+    <div class="section-header">
+        <span class="section-title">Projects</span>
+        <span class="section-description">Some things I've made in my free time or built with friends at a hackathon!</span>
+    </div>
+    <div id="projects" class="list-1-container">
+        <app-achievement-card 
+            title="Gradient Descent Simulator" 
+            description="A visual simulation of gradient descent, an optimization technique. Created from scratch using Topological sort and the Chain Rule."
+            imageUrl="/images/gradient-descent.png"
+            alignment="right" />
+        <app-achievement-card 
+            title="Discord Emoji Bot" 
+            description="A discord bot that 'bypasses' server emoji limits by adding the most-used emojis to a server and removing unused emojis. Also uses a webhook to automatically substitute emojis into messages."
+            imageUrl="/images/discord-bot.png" 
+            alignment="right" />
+        <app-achievement-card 
+            title="Gnostic" 
+            description="A Chrome extension and Notion Plugin that generates questions and answers based on notes in Notion. Once installed, a button pops up on that allows you to generate a quiz based on the given notes!"
+            imageUrl="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/570/738/datas/medium.png" 
+            alignment="right" />
+        <app-achievement-card 
+            title="PosTrainer" 
+            description="A personal coach, detecting reps via a webcam, and providing feedback on posture and other workout best practices. It also scores users based on their quality of workouts."
+            imageUrl="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/205/318/datas/gallery.jpg" 
+            alignment="right" />
+        <app-achievement-card 
+            title="MediBase" 
+            description="A medication assistant allowing people who have poorer eyesight, who don’t understand English well, or have trouble remembering to take safely take medication."
+            imageUrl="https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/001/905/923/datas/medium.png" 
+            alignment="right" />
+    </div>
+</div>
+
+<div id="experiences" class="content-section">
+    <div class="section-header">
+        <span class="section-title">Experiences</span>
+        <span class="section-description">Organizations I've been a part of (or still am at) and stuff I've done in the world!</span>
+    </div>
+    <div id="experiences" class="list-1-container">
+        <app-achievement-card 
+            title="Hack the 6ix" 
+            description="As part of the organizing team in Toronto's largest hackathon, I've helped find food deals and schedule activities! Hope to see you there in the summer of 2025!"
+            imageUrl="/images/ht6-banner.png" 
+            alignment="left" />
+        <app-achievement-card 
+            title="MacLyonsDen" 
+            description="A centralized website at WLMAC where all students can easily find information, access class schedules, and form a large community. I am immensely privileged to have been a part of MLD it in its earliest stages, working on the UI and layout. Later on, as its frontend lead, I aided in its migration to a React client."
+            imageUrl="https://maclyonsden.com/media/featured_image/357fd3bf65b44ef7a333d78bbb4b1845.png" 
+            alignment="left" />
+    </div>
+</div>
+
+<div id="awards" class="content-section">
+    <div class="section-header">
+        <span class="section-title">Awards</span>
+        <span class="section-description">Some of my Achievements from competitions I've been a part of!</span>
+    </div>
+    <div id="awards" class="list-1-container">
+        <app-achievement-card 
+            title="Internation Olympiad in Informatics" 
+            description="I was a representative for the Canadian Delegation at the IOI - the most prestigious secondary school competition in algorithmic design and implementations - where I earned an Honourable Mention."
+            imageUrl="https://cemc.uwaterloo.ca/sites/default/files/styles/cke_media_resize_medium/public/2024-09/ioi2024.jpeg?itok=G1NWridP" 
+            alignment="right" />
+        <app-achievement-card 
+            title="Canadian Math Olympiad" 
+                description="After performing within the 80/6000 on the COMC, I was invited to write the CMO, where I got a 13/35!"
+            imageUrl="/images/DanielYe_CMOCertificate.jpg" 
+            alignment="right" />
+        <app-achievement-card 
+            title="Cyberpatriot" 
+            description="In a team of 6, we had to perform forensics on an infected system, remove malware, and harden operating systems. Out of over 5000 teams, we finished with the top 20, earning a Platinum Tier Award!"
+            imageUrl="https://etowahga958.weebly.com/uploads/1/2/4/6/124669310/cyber_orig.jpg" 
+            alignment="right"/>
     </div>
 </div>

@@ -1,41 +1,15 @@
 @use "../utils" as u;
 
-@mixin heading-font {
-  font-family: "Cabin", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 2.5em;
-  font-variation-settings:
-    "wdth" 100;
-}
-@mixin description-font {
-  font-family: "Cabin", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 1.5em;
-  font-variation-settings:
-    "wdth" 80;
-  color: grey;
-}
-@mixin achievement-title-font{
-  font-family: system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-size: 2em;
-  font-style: normal;
-}
-
 :host {
+    background-color: u.$lightblue;
     @include u.column-flex;
     justify-content: stretch;
     #intro{
         margin-top: 3em;
         display: flex;
         flex-direction: row;
-        gap: 10px;
         align-items: center;
+        justify-content: space-evenly;
         @media (min-width: 900px) {
             flex-wrap: nowrap;
         }
@@ -44,7 +18,6 @@
         }
 
         #intro-text {
-            flex: 2;
             flex-basis: 500px;
             @include u.column-flex;
             align-self: center;
@@ -54,64 +27,132 @@
             @media (max-width: 900px) {
                 margin-left: 20px;
             }
-            #heading {
-                align-self: center;
-                @include heading-font;
-                @include u.column-flex;
+
+            #first {
+                @include u.bold-text;
+                font-size: 3em;
+                margin-bottom: -20px;
             }
-            #description {
-                @include description-font;
-                @include u.column-flex;
-                gap: 20px;
+            .big-text {
+                @include u.bold-text;
+                font-size: 7em;
+            }
+            #third {
+                @include u.default-text;
+                font-size: 2.5em;
             }
         }
         #intro-pic {
             @include u.column-flex;
-            flex: 1;
             align-items: center;
+            flex-basis: 400px;
             img {
-                width: 300px;
+                width: 400px;
                 border-radius: 999px;
             }
-            margin-left: 2em;
             margin-right: 20px;
         }
     }
-    #achievements {
-        margin-top: 5em;
-        @include u.column-flex;
-        align-items: stretch;
-        margin-left: 20px;
-        .section-header {
-            border-top: 2px solid black;
-            padding-top: 20px;
+
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        .section-title {
+            @include u.bold-text;
+            font-size: 3em;
         }
-        #achievement-types{ 
-            @include u.column-flex;
-            justify-content: stretch;
-            .achievement-column {
-                margin-top: 20px;
-                flex: 1;
-                flex-basis: 0;
-                @include u.column-flex;
-                .cat-header {
-                    align-self: center;
-                    margin-bottom: 20px;
-                    @include achievement-title-font;
+        .section-description{
+            @include u.default-text;
+            font-size: 1.5em;
+        }
+        margin-bottom: 3em;
+    }
+    .content-section {
+        margin-left: 5em;
+        margin-right: 5em;
+        margin-top: 7em;
+    }
+    #about-me {
+        display: flex;
+        flex-direction: column;
+        .section-header {
+            margin-bottom: 0;
+        }
+        #about-me-content {
+            .about-header {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+
+                .about-header-icon {
+                    width: 80px;
+                    border-right: 5px solid black;
+                    border-end-end-radius: 2px;
+                    padding-right: 10px;
                 }
-                .cat-list {
-                    align-self: center;
-                    @include u.row-flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    gap: 20px;
+                .about-header-text {
+                    display: flex;
+                    flex-direction: column;
+                    @include u.default-text;
+                    .about-header-title {
+                        font-size: 2.5em;
+                        margin-bottom: 0;
+                    }
+                    .about-header-desc {
+                        font-size: 1.5em;
+                    }
+                }
+            }
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: space-evenly;
+            align-self: center;
+            .about-section {
+                margin-top: 3em;
+                .section-content{
+                    @include u.default-text;
+                    margin-left: 30px;
+                    font-size: 1.5em;
                 }
             }
         }
     }
-}
+    .list-1-container {
+        @include u.column-flex;
+        gap: 20px;
+        
+        @include u.default-text;
+    }
+    #projects {
+        .section-header {
+            align-self: flex-end;
+            align-items: flex-end;
+        }
+        .list-1-container {
+            align-items: flex-end;
+        }
+        align-items: stretch;
+    }
+    #experiences {
+        .list-1-container {
+            align-items: flex-start;
+        }
+    }
 
-.section-header {
-    @include heading-font;
-    text-align: center;
+    #awards{
+        .section-header {
+            align-self: flex-end;
+            align-items: flex-end;
+        }
+        .list-1-container {
+            align-items: flex-end;
+        }
+    }
+
+    padding-bottom: 2em;
 }
