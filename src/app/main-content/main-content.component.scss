@@ -45,6 +45,7 @@
         }
         #intro-pic {
             @include u.column-flex;
+            position: relative;
             align-items: center;
             flex-basis: 400px;
             img {
@@ -52,6 +53,21 @@
                 border-radius: 999px;
             }
             margin-right: 20px;
+
+            .social-image {
+                position: absolute;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    transition: transform 0.5s ease-in-out;
+                    border-radius: 100%;
+                    // box-shadow: 0px, 0px, 20px, rgba(0, 0, 255), inset 0 0 20px rgba(0, 0, 255, 0.5);
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 0, 0);
+                }
+                img:hover {
+                    transform: rotate(360deg);
+                }
+            }
         }
     }
 
